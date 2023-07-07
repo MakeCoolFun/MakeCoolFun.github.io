@@ -2,13 +2,14 @@
 
 import styles from '@/components/styles/page.module.css';
 import Link from 'next/link';
+import path from 'path';
 
 const BottomComponent = () => {
     // bottom을 구성하는 data
     const MainClientData = [
         {
             id: 'm00',
-            url: '/dashboard/profilePage',
+            url: '/dashboard',
             name: 'profilePage',
             as: '/dashboard',
             h2: 'Profile',
@@ -16,7 +17,7 @@ const BottomComponent = () => {
         },
         {
             id: 'm01',
-            url: '/dashboard/careerPage',
+            url: '/dashboard',
             name: 'careerPage',
             as: '/dashboard',
             h2: 'Career',
@@ -24,7 +25,7 @@ const BottomComponent = () => {
         },
         {
             id: 'm02',
-            url: '/dashboard/projectPage',
+            url: '/dashboard',
             name: 'projectPage',
             as: '/dashboard',
             h2: 'Project',
@@ -32,7 +33,7 @@ const BottomComponent = () => {
         },
         {
             id: 'm03',
-            url: '/dashboard/newsPage',
+            url: '/dashboard',
             name: 'newsPage',
             as: '/dashboard',
             h2: 'News',
@@ -44,7 +45,16 @@ const BottomComponent = () => {
     return (
         <div className={styles.grid}>
             {MainClientData.map((m_c_data) => (
-                <Link key={m_c_data.id} href={m_c_data.url} className={styles.card}>
+                <Link
+                    key={m_c_data.id}
+                    href={{
+                        pathname: m_c_data.url,
+                        query: {
+                            search: m_c_data.name,
+                        },
+                    }}
+                    className={styles.card}
+                >
                     <h2>
                         {m_c_data.h2} <span>-&gt;</span>
                     </h2>

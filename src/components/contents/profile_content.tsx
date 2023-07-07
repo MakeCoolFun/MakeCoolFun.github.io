@@ -8,6 +8,7 @@ import { styled } from 'styled-components';
 const ProfileClient = () => {
     // 0. path 확인
     const currentPath = usePathname();
+
     // 1. 내 사진 ( 이미지 포함)
     const PICTURE_LIST = [{ id: 'lee_00', url: require('../../../public/profilepicture/lhs_0.jpg'), name: 'lee_00' }];
     // 2. 내 경력
