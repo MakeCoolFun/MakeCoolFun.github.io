@@ -73,7 +73,7 @@ const CardDiv = styled.div`
     flex-direction: column;
     width: 440px;
     height: 400px;
-    border-radius: 30px 30px 10px 60px;
+    border-radius: 5px 50px 10px 60px;
     overflow: hidden;
     background-color: white;
     z-index: 1;
